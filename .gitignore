@@ -1,0 +1,43 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Builds
+dist/
+build/
+*.tsbuildinfo
+
+# Environment variables (all variants except .env.example)
+.env
+.env.*
+!.env.example
+
+# Sensitive keys, certs & database dumps
+*.pem
+*.key
+*.p12
+*.pfx
+*.sql.gz
+*.dump
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Test coverage & caches
+coverage/
+.vite/
+
+# Editor & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Uploaded temporary files
+uploads/
+
+# Documents
+docs/

@@ -1,0 +1,25 @@
+{
+  "name": "cbms-web-gis",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Full-Stack Web-GIS Decision Support & Analytics System for CBMS Data",
+  "workspaces": [
+    "packages/shared",
+    "apps/server",
+    "apps/web"
+  ],
+  "scripts": {
+    "dev:shared": "npm --workspace=@cbms/shared run dev",
+    "dev:server": "npm --workspace=@cbms/server run dev",
+    "dev:web": "npm --workspace=@cbms/web run dev",
+    "db:migrate": "npm --workspace=@cbms/server run db:migrate",
+    "db:import-boundaries": "npm --workspace=@cbms/server run db:import-boundaries",
+    "db:seed-households": "npm --workspace=@cbms/server run db:seed-households",
+    "build": "npm --workspace=@cbms/shared run build && npm --workspace=@cbms/server run build && npm --workspace=@cbms/web run build",
+    "typecheck": "npm --workspace=@cbms/shared run typecheck && npm --workspace=@cbms/server run typecheck && npm --workspace=@cbms/web run typecheck",
+    "test": "npm --workspace=@cbms/server run test"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
