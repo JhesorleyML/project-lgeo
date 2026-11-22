@@ -190,6 +190,9 @@ export interface BarangayAggregatedReportRow {
   no4psPoorHouseholds: number;
   outOfSchoolYouthCount: number;
   householdsWithOsy: number;
+  attendingSchoolCount?: number;
+  nonLiterateCount?: number;
+  tvetCount?: number;
   seniorCitizensCount: number;
   householdsWithSenior: number;
   pwdCount: number;
@@ -198,6 +201,8 @@ export interface BarangayAggregatedReportRow {
   fisherfolkCount: number;
   farmerCount: number;
   unemployedCount: number;
+  underemployedCount?: number;
+  ofwCount?: number;
   foodInsecureHouseholds: number;
   unimprovedWaterHouseholds: number;
   unimprovedSanitationHouseholds: number;
