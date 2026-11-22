@@ -8,7 +8,7 @@
     "build": "tsc -p tsconfig.json",
     "start": "node dist/index.js",
     "typecheck": "tsc --noEmit",
-    "test": "tsx --test src/modules/etl/__tests__/cbms-etl.test.ts src/modules/reports/__tests__/cbms-reports.test.ts",
+    "test": "tsx --test src/modules/etl/__tests__/cbms-etl.test.ts src/modules/reports/__tests__/cbms-reports.test.ts src/modules/ai/__tests__/cbms-ai.test.ts ../web/src/utils/__tests__/dashboardAnalytics.test.ts",
     "db:migrate": "tsx src/db/migrate.ts",
     "db:import-boundaries": "tsx src/db/import-boundaries.ts",
     "db:seed-households": "tsx src/db/seed-sample-households.ts"

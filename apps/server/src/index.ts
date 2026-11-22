@@ -7,6 +7,7 @@ import { authenticateJwt } from './middleware/auth-rbac.js';
 import { gisRouter } from './modules/gis/gis.routes.js';
 import { etlRouter } from './modules/etl/etl.routes.js';
 import { reportsRouter } from './modules/reports/reports.routes.js';
+import { aiRouter } from './modules/ai/ai.routes.js';
 
 const app = express();
 
@@ -34,6 +35,7 @@ app.get('/api/v1/health', async (_req, res) => {
 app.use('/api/v1/gis', gisRouter);
 app.use('/api/v1/etl', etlRouter);
 app.use('/api/v1/reports', reportsRouter);
+app.use('/api/v1/ai', aiRouter);
 
 app.listen(env.PORT, () => {
   console.log(`[CBMS Web-GIS Server] Listening on http://localhost:${env.PORT}`);
