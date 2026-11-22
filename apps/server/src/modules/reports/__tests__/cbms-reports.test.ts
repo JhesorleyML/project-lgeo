@@ -179,6 +179,14 @@ describe('CBMS 8-Dimension Report Engine, Selective Section Joins & Tiered RBAC'
     assert.ok(aurelio);
     assert.equal(aurelio.barangayName, 'Aurelio');
     assert.ok(aurelio.outOfSchoolYouthCount > 0);
+    assert.ok((aurelio.attendingSchoolCount ?? 0) > 0);
+    assert.ok((aurelio.nonLiterateCount ?? 0) > 0);
+    assert.ok((aurelio.tvetCount ?? 0) > 0);
+    assert.ok(aurelio.fisherfolkCount > 0);
+    assert.ok(aurelio.farmerCount > 0);
+    assert.ok(aurelio.unemployedCount > 0);
+    assert.ok((aurelio.underemployedCount ?? 0) > 0);
+    assert.ok((aurelio.ofwCount ?? 0) > 0);
     assert.ok(aurelio.fourPsHouseholds > 0);
   });
 
