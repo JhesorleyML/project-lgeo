@@ -2,6 +2,7 @@ import React from 'react';
 import { MapHeaderBar } from '../components/map/MapHeaderBar';
 import { LayerControlSidebar } from '../components/map/LayerControlSidebar';
 import { CbmsMapCanvas } from '../components/map/CbmsMapCanvas';
+import { CbmsAiAssistantDrawer } from '../components/ai/CbmsAiAssistantDrawer';
 
 export const MapExplorerPage: React.FC = () => {
   return (
@@ -13,6 +14,7 @@ export const MapExplorerPage: React.FC = () => {
           <CbmsMapCanvas />
         </main>
       </div>
+      <CbmsAiAssistantDrawer />
     </div>
   );
 };

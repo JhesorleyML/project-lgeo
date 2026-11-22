@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowLeft, Globe2 } from "lucide-react";
+import { ArrowLeft, Bot, Globe2 } from "lucide-react";
 import { useMapFilterStore } from "../../store/useMapFilterStore";
 import { BASEMAP_OPTIONS, type BasemapId } from "../../utils/basemaps";
 import { UserProfileMenu } from "../layout/UserProfileMenu";
@@ -13,6 +13,7 @@ export const MapHeaderBar: React.FC = () => {
     setActivePage,
     setSurveyYear,
     setBasemapId,
+    toggleAiDrawer,
   } = useMapFilterStore();
 
   return (
@@ -77,6 +78,15 @@ export const MapHeaderBar: React.FC = () => {
             <option value={2022}>2022 CBMS</option>
           </select>
         </div>
+
+        <button
+          type="button"
+          onClick={toggleAiDrawer}
+          className="flex items-center gap-1.5 rounded-lg border border-sky-500/40 bg-sky-500/15 px-2.5 py-1 text-xs font-semibold text-sky-300 transition hover:bg-sky-500/25 hover:text-white"
+        >
+          <Bot className="h-3.5 w-3.5" />
+          <span className="hidden sm:inline">AI Analyst</span>
+        </button>
 
         <ThemeToggleButton />
         <UserProfileMenu />

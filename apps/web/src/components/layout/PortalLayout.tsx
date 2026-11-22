@@ -1,6 +1,7 @@
 import React from "react";
 import {
   BarChart3,
+  Bot,
   Download,
   FileSpreadsheet,
   GitCompareArrows,
@@ -12,6 +13,7 @@ import type { PortalPageId } from "@cbms/shared";
 import { useMapFilterStore } from "../../store/useMapFilterStore";
 import { UserProfileMenu } from "./UserProfileMenu";
 import { ThemeToggleButton } from "./ThemeToggleButton";
+import { CbmsAiAssistantDrawer } from "../ai/CbmsAiAssistantDrawer";
 
 interface PortalLayoutProps {
   children: React.ReactNode;
@@ -56,8 +58,13 @@ const PORTAL_NAV_ITEMS: Array<{
 ];
 
 export const PortalLayout: React.FC<PortalLayoutProps> = ({ children }) => {
-  const { activePage, surveyYear, setActivePage, setSurveyYear } =
-    useMapFilterStore();
+  const {
+    activePage,
+    surveyYear,
+    setActivePage,
+    setSurveyYear,
+    toggleAiDrawer,
+  } = useMapFilterStore();
 
   return (
     <div className="flex h-screen w-screen overflow-hidden bg-slate-950 text-slate-100">
@@ -172,6 +179,15 @@ export const PortalLayout: React.FC<PortalLayoutProps> = ({ children }) => {
               </select>
             </div>
 
+            {/* <button
+              type="button"
+              onClick={toggleAiDrawer}
+              className="flex items-center gap-1.5 rounded-lg border border-sky-500/40 bg-sky-500/15 px-3 py-1.5 text-xs font-semibold text-sky-300 transition hover:bg-sky-500/25 hover:text-white"
+            >
+              <Bot className="h-3.5 w-3.5" />
+              <span>AI Analyst</span>
+            </button> */}
+
             <ThemeToggleButton />
             <UserProfileMenu />
           </div>
@@ -179,6 +195,7 @@ export const PortalLayout: React.FC<PortalLayoutProps> = ({ children }) => {
 
         {/* Scrollable Page Content */}
         <main className="flex-1 overflow-y-auto p-6">{children}</main>
+        <CbmsAiAssistantDrawer />
       </div>
     </div>
   );
